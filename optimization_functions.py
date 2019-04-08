@@ -51,6 +51,11 @@ class HyperbolicParaboloid:
 	Saddle surface.
 
 	f(x,y) = x^2 - y^2
+
+	Gradients:
+
+	dx = 2x
+	dy = 2y
 	"""
 	def __init__(self):
 		"""
@@ -87,6 +92,11 @@ class MonkeySaddle:
 	Saddle surface.
 
 	f(x,y) = x^3 - 3xy^2
+
+	Gradients:
+
+	dx = 3x^2 - 3y^2
+	dy = -6xy
 	"""
 	def __init__(self):
 		"""
@@ -108,7 +118,7 @@ class MonkeySaddle:
 		"""
 		Calculates the gradient of the function.
 		"""
-		self.dx = 3*x - 3*np.power(y,2)
+		self.dx = 3*np.power(x,2) - 3*np.power(y,2)
 		self.dy = -6*x*y
 
 	def function(self,x,y):

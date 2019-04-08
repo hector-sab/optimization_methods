@@ -36,7 +36,7 @@ class GradientDescent:
 		"""
 		for i in range(steps):
 			#self.function.function()
-
+			
 			loss = self.function.calculate(self.x,self.y)
 
 			self.xs.append(self.x)
