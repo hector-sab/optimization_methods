@@ -201,7 +201,8 @@ class TrajectoryAnimation3D(animation.FuncAnimation):
 
 
 def animation_2d(optimizers,levels=12,x_range=[-10,10],y_range=[-10,10],steps=20,
-	cmap='coolwarm',labels_loc='upper left',save=False,save_path='',show=True):
+	cmap='coolwarm',labels_loc='upper left',save=False,save_path='',show=True,
+	interval=60):
 	"""
 	Args:
 	 - optimizers (list): List of optimizers
@@ -235,7 +236,7 @@ def animation_2d(optimizers,levels=12,x_range=[-10,10],y_range=[-10,10],steps=20
 	cbar = fig.colorbar(cs)
 
 	# Animates
-	anim = TrajectoryAnimation(*trajectories, labels=optimizers_name, ax=ax)
+	anim = TrajectoryAnimation(*trajectories, labels=optimizers_name, ax=ax,interval=interval)
 
 	# Displays the labels
 	ax.legend(loc=labels_loc)

@@ -36,7 +36,7 @@ class GradientDescent:
 		"""
 		for i in range(steps):
 			#self.function.function()
-			
+
 			loss = self.function.calculate(self.x,self.y)
 
 			self.xs.append(self.x)
@@ -45,12 +45,13 @@ class GradientDescent:
 
 			dx = self.function.dx
 			dy = self.function.dy
+			#print('x: {} | y: {} | dx: {} | dy: {}'.format(self.x,self.y,dx,dy))
 
 			self.x = self.x - lr*dx
-			self.y = self.y - lr*dx
+			self.y = self.y - lr*dy
 
 class Momentum:
-	def __init__(self,function,x=None,y=None,beta=0.1):
+	def __init__(self,function,x=None,y=None,beta=0.9):
 		"""
 		Args:
 		 - function (): Function from optimization_functions 
@@ -160,7 +161,7 @@ class RMSprop:
 			self.y = self.y - lr*(dy/(np.sqrt(self.sy)+np.finfo(float).eps))
 
 class Adam:
-	def __init__(self,function,x=None,y=None,beta1=0.1,beta2=0.1):
+	def __init__(self,function,x=None,y=None,beta1=0.9,beta2=0.999):
 		"""
 		Args:
 		 - function (): Function from optimization_functions 
@@ -171,6 +172,7 @@ class Adam:
 		self.function = function()
 		self.beta1 = beta1
 		self.beta2 = beta2
+
 		self.vx = 0
 		self.vy = 0
 		self.vx_corr = 0

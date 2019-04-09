@@ -12,17 +12,19 @@ import vizualization_utils as vut
 
 
 if __name__=='__main__':
-	x_init = 0
-	y_init = 7.5
-	steps = 10000
+	x_init = 5
+	y_init = -.08
+	steps = 100
 	lr = 1e-1
-	func = opf.Paraboloid
+
+	#func = opf.Paraboloid
+	func = opf.HyperbolicParaboloid
 
 	# GradientDescent, Momentum, RMSprop
 	opt_gd = opm.GradientDescent(func,x=x_init,y=y_init)
 	opt_mom = opm.Momentum(func,x=x_init,y=y_init)
 	opt_rms = opm.RMSprop(func,x=x_init,y=y_init)
-	opt_adm = opm.Adam(func,x=x_init,y=y_init)
+	opt_adm = opm.Adam(func,x=x_init,y=y_init)#,beta1=0.1,beta2=0.1)
 
 	# Optimize
 	opt_gd.optimize(steps=steps,lr=lr)
@@ -36,11 +38,14 @@ if __name__=='__main__':
 	
 	x_range = [-10,10]
 	y_range = [-10,10]
+	#x_range = [-1,1]
+	#y_range = [-1,1]
+
 	# 2D
 	if True:
 		vut.animation_2d([opt_gd,opt_mom,opt_rms,opt_adm],x_range=x_range,y_range=y_range,save=False,
 			save_path='/home/hectorsab/Documents/Tesis/content_creation/optimization/hyperbolic.mp4',
-			labels_loc='lower left')
+			labels_loc='upper right',levels=20,interval=60)
 
 	# 3D
 	if False:

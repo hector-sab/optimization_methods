@@ -55,7 +55,7 @@ class HyperbolicParaboloid:
 	Gradients:
 
 	dx = 2x
-	dy = 2y
+	dy = -2y
 	"""
 	def __init__(self):
 		"""
@@ -78,7 +78,7 @@ class HyperbolicParaboloid:
 		Calculates the gradient of the function.
 		"""
 		self.dx = 2*x
-		self.dy = 2*y
+		self.dy = -2*y
 
 	def function(self,x,y):
 		"""
