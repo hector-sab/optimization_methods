@@ -38,15 +38,15 @@ if __name__=='__main__':
 	
 	x_range = [-10,10]
 	y_range = [-10,10]
-	#x_range = [-1,1]
-	#y_range = [-1,1]
 
 	# 2D
-	if True:
-		vut.animation_2d([opt_gd,opt_mom,opt_rms,opt_adm],x_range=x_range,y_range=y_range,save=False,
-			save_path='/home/hectorsab/Documents/Tesis/content_creation/optimization/hyperbolic.mp4',
-			labels_loc='upper right',levels=20,interval=60)
+	if False:
+		save_path = '/home/hectorsab/Documents/Tesis/content_creation/optimization_methods/ims/hyperbolic.gif'
+		vut.animation_2d([opt_gd,opt_mom,opt_rms,opt_adm],x_range=x_range,y_range=y_range,save=True,
+			save_path=save_path,labels_loc='upper right',levels=20,interval=60)
 
 	# 3D
-	if False:
-		vut.animation_3d([opt_gd,opt_mom,opt_rms,opt_adm],x_range=x_range,y_range=y_range,elev=70,azim=-75)
+	else:
+		save_path = '/home/hectorsab/Documents/Tesis/content_creation/optimization_methods/ims/hyperbolic3d.gif'
+		vut.animation_3d([opt_gd,opt_mom,opt_rms,opt_adm],x_range=x_range,y_range=y_range,elev=50,azim=255,
+			save=True,save_path=save_path)
