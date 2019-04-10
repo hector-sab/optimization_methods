@@ -48,5 +48,5 @@ if __name__=='__main__':
 	# 3D
 	else:
 		save_path = '/home/hectorsab/Documents/Tesis/content_creation/optimization_methods/ims/hyperbolic3d.gif'
-		vut.animation_3d([opt_gd,opt_mom,opt_rms,opt_adm],x_range=x_range,y_range=y_range,elev=50,azim=255,
+		vut.animation_3d([opt_gd,opt_mom,opt_rms,opt_adm],x_range=x_range,y_range=y_range,elev=50,azim=235,
 			save=True,save_path=save_path)

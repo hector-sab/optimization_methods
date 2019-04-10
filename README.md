@@ -10,5 +10,12 @@ _optimization_methods.py_: Contains the optimizers.
 
 _visualization_utils.py_: Contains utilities to visualize in 2d/3d contours, surfaces, and progress of optimization.
 
+_runme_animate_plot.py_: Displays the 2d/3d animation and saves the figures. 
+
+# 2D Animation
 ![2d](ims/hyperbolic.gif)
+
+# 3D Animation
+Note that there's a problem when showing the optimizers. It doesn't happens with the animation of matplotlib. 
+
 ![3d](ims/hyperbolic3d.gif)
